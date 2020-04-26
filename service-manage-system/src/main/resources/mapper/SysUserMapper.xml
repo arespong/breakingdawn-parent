@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.miracle.manage_system.dao.SysUserMapper">
+    <insert id="insert" parameterType="com.miracle.framework.domain.system.SysUser" useGeneratedKeys="true">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="userId" keyColumn="user_id">
+            SELECT LAST_INSERT_ID() AS user_id
+        </selectKey>
+        INSERT INTO sys_user
+        (
+        dept_id,user_name,nick_name,user_type,email,
+        phonenumber,sex,avatar,password,status,
+        del_flag,login_ip,login_date,create_by,create_time,
+        update_by,update_time,remark
+        )
+        VALUES
+        (
+        #{deptId},#{userName},#{nickName},#{userType},#{email},
+        #{phonenumber},#{sex},#{avatar},#{password},#{status},
+        #{delFlag},#{loginIp},#{loginDate},#{createBy},#{createTime},
+        #{updateBy},#{updateTime},#{remark}
+        )
+
+    </insert>
+
+    <select id="selectOne" resultType="com.miracle.framework.domain.system.SysUser" parameterType="long">
+        SELECT
+         user_id, dept_id,user_name,nick_name,user_type,
+         email,phonenumber,sex,avatar,password,
+         status,del_flag,login_ip,login_date,create_by,
+         create_time,update_by,update_time,remark
+        FROM
+          sys_user
+        WHERE
+          user_id = #{userId}
+    </select>
+</mapper>
