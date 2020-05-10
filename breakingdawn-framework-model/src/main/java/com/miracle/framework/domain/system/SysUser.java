@@ -25,16 +25,16 @@ public class SysUser extends BaseEntity {
      */
 
     private Long deptId;
+    /**
+     * 登录账号
+     */
+    private String loginName;
 
     /**
-     * 用户账号
+     * 用户名
      */
     private String userName;
 
-    /**
-     * 用户昵称
-     */
-    private String nickName;
     /**
      * 用户类型
      */
@@ -63,6 +63,10 @@ public class SysUser extends BaseEntity {
      * 密码
      */
     private String password;
+    /**
+     * 盐加密
+     */
+    private String salt;
 
     /**
      * 帐号状态（0正常 1停用）

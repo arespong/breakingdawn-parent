@@ -2,6 +2,7 @@ package com.miracle.api.manage_system;
 
 import com.github.pagehelper.PageInfo;
 import com.miracle.framework.domain.system.SysUser;
+import com.miracle.framework.domain.system.ext.SysUserExt;
 import com.miracle.framework.domain.system.requset.QuerySysUserRequest;
 import com.miracle.framework.domain.system.response.SysUserResult;
 import com.miracle.framework.model.response.ResponseResult;
@@ -20,17 +21,19 @@ public interface SystemUserControllerApi {
     ResponseResult remove(Long[] sysUserIds);
 
     @ApiOperation("编辑用户")
-    SysUserResult edit(Long sysUserId);
+    SysUserResult edit(SysUser sysUser);
 
     @ApiOperation("用户详情")
     SysUserResult selectOne(Long sysUserId);
 
     @ApiOperation("条件分页查询所有用户")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "pageNum", value = "当前页码", required = true, paramType = "path", dataType = "int"),
-            @ApiImplicitParam(name = "size", value = "每页记录数", required = true, paramType = "path", dataType = "int"),
+            @ApiImplicitParam(name = "pageNum", value = "当前页码", required = true, paramType = "path", dataType = "Integer"),
+            @ApiImplicitParam(name = "size", value = "每页记录数", required = true, paramType = "path", dataType = "Integer"),
             @ApiImplicitParam(name = "querySysUserRequest", value = "查询条件", required = false),
     })
-    PageInfo<SysUser> list(int pageNum, int size, QuerySysUserRequest querySysUserRequest);
+    PageInfo<SysUser> list(Integer pageNum, Integer size, QuerySysUserRequest querySysUserRequest);
 
+    @ApiOperation(value = "条件分页查询所有用户",tags = "根据用户登录名获取用户的部门、职位、角色")
+    SysUserExt getSysUserExt(String loginName);
 }

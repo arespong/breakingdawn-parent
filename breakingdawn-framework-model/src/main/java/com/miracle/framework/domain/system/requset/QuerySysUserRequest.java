@@ -2,29 +2,19 @@ package com.miracle.framework.domain.system.requset;
 
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Data
 public class QuerySysUserRequest {
     /**
-     * 用户ID
-     */
-    private Long userId;
-    /**
      * 部门ID
      */
-    private Long deptId;
+    private String  deptName;
     /**
-     * 用户账号
+     * 用户名
      */
     private String userName;
 
-    /**
-     * 用户昵称
-     */
-    private String nickName;
-    /**
-     * 用户类型
-     */
-    public String userType;
     /**
      * 用户邮箱
      */
@@ -34,11 +24,6 @@ public class QuerySysUserRequest {
      * 手机号码
      */
     private String phonenumber;
-
-    /**
-     * 用户性别
-     */
-    private String sex;
 
 
     /**
@@ -50,4 +35,14 @@ public class QuerySysUserRequest {
      * 删除标志（0代表存在 2代表删除）
      */
     private String delFlag;
+
+    /**
+     * 创建的开始时间
+     */
+    private LocalDate startTime;
+
+    /**
+     * 创建的结束时间
+     */
+    private LocalDate endTime;
 }

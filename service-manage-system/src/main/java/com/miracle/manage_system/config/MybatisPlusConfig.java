@@ -12,7 +12,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@MapperScan("com.miracle.system.dao*")
+@MapperScan("com.miracle.system.dao.**")
 public class MybatisPlusConfig {
     @Bean
     public PaginationInterceptor paginationInterceptor() {

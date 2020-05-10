@@ -1,4 +1,4 @@
-package com.miracle.framework.domain.ucenter.request;
+package com.miracle.framework.domain.system.requset;
 
 import com.miracle.framework.model.request.RequestData;
 import lombok.Data;

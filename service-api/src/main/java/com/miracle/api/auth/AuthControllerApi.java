@@ -1,7 +1,7 @@
 package com.miracle.api.auth;
 
-import com.miracle.framework.domain.ucenter.request.LoginRequest;
-import com.miracle.framework.domain.ucenter.response.LoginResult;
+import com.miracle.framework.domain.system.requset.LoginRequest;
+import com.miracle.framework.domain.system.response.LoginResult;
 import com.miracle.framework.model.response.ResponseResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

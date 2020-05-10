@@ -1,6 +1,6 @@
 package com.miracle.framework.domain.system.response;
 
-import com.miracle.framework.domain.system.SysUser;
+import com.miracle.framework.domain.system.SysMenu;
 import com.miracle.framework.model.response.ResponseResult;
 import com.miracle.framework.model.response.ResultCode;
 import lombok.Data;
@@ -12,11 +12,11 @@ import java.io.Serializable;
 @Data
 @ToString
 @NoArgsConstructor
-public class SysUserResult extends ResponseResult implements Serializable {
-    private SysUser sysUser;
+public class SysMenuResult extends ResponseResult implements Serializable {
+    private SysMenu sysMenu;
 
-    public SysUserResult(ResultCode resultCode, SysUser sysUser) {
+    public SysMenuResult(ResultCode resultCode, SysMenu sysMenu) {
         super(resultCode);
-        this.sysUser = sysUser;
+        this.sysMenu = sysMenu;
     }
 }
